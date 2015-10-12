@@ -1,0 +1,6 @@
+## Clear Memory
+rm(list=ls())
+
+setwd("C:/Users/sumanr/Desktop/Coursera_R/R_Code")
+
+## Control Structure in R - Repeat, Next, Break
