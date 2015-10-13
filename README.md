@@ -1,2 +1,2 @@
-# test
-This is a test Repo
+# R programming
+Codes repository
