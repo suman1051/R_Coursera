@@ -1,0 +1,8 @@
+excelrank<- function(x) {
+  z<- data.frame(x,rank(x))
+  names(z) <- c(deparse(substitute(x)),"rank")
+  z
+}
+
+
+excelrank(airquality$Temp)
