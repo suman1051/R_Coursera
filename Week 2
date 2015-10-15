@@ -114,3 +114,72 @@ columnmean <- function(y, removeNA=TRUE) {
 columnmean(airquality)
 columnmean(airquality, FALSE)
 
+## Functions ##
+mydata<- rnorm(100)
+sd(mydata)
+
+args(lm)
+
+## The "..." Argument
+myplot<- function(x, y, type= "1", ...) {
+    plot(x,y,type = type, ...)
+}
+
+args(paste)
+
+paste("a", "b", sep = ":")
+
+
+## Scoping Rules - Symbol Binding ##
+
+search()
+
+## Scoping Rules - R Scoping Rules ##
+
+make.power<- function(n) {
+    pow<- function(x) {
+        x^n
+    }
+    pow
+}
+
+cube<- make.power(3)
+square<- make.power(2)
+
+cube(3)
+square(3)
+
+## Coding Standards ##
+
+## Dates and Times ##
+
+x<- as.Date("1970-01-01")
+x 
+unclass(x)
+unclass(as.Date("1970-01-02"))
+
+x<- Sys.time()
+x # x already in POSIXct format
+unclass(x)
+names(unclass(x))
+#NULL
+
+p<-as.POSIXlt(x)
+p
+names(unclass(p))
+p$mday
+p$zone
+
+datestring<- c("January 10, 2012 15:40", "December 9, 2011 9:10")
+datestring
+x<- strptime(datestring, "%B %d, %Y %H:%M")
+x
+class(x)
+
+
+x<- as.POSIXct(Sys.time())
+x
+
+y<-as.POSIXct(x, tz = "GMT")
+y
+y-x
